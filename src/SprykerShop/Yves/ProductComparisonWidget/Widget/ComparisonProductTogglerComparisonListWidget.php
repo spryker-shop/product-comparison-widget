@@ -30,10 +30,6 @@ class ComparisonProductTogglerComparisonListWidget extends AbstractWidget
      */
     protected const PARAMETER_IS_DISABLED = 'isDisabled';
 
-    /**
-     * @param string $sku
-     * @param bool $isDisabled
-     */
     public function __construct(string $sku, bool $isDisabled)
     {
         $this->addSkuParameter($sku);
@@ -41,45 +37,26 @@ class ComparisonProductTogglerComparisonListWidget extends AbstractWidget
         $this->addMaxItemsParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ComparisonProductTogglerComparisonListWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductComparisonWidget/views/comparison-product-toggler/comparison-product-toggler.twig';
     }
 
-    /**
-     * @param string $sku
-     *
-     * @return void
-     */
     protected function addSkuParameter(string $sku): void
     {
         $this->addParameter(static::PARAMETER_SKU, $sku);
     }
 
-    /**
-     * @param bool $isDisabled
-     *
-     * @return void
-     */
     protected function addIsDisabledParameter(bool $isDisabled): void
     {
         $this->addParameter(static::PARAMETER_IS_DISABLED, $isDisabled);
     }
 
-    /**
-     * @return void
-     */
     protected function addMaxItemsParameter(): void
     {
         $this->addParameter(static::PARAMETER_MAX_ITEMS, $this->getConfig()->getMaxItemsInCompareList());

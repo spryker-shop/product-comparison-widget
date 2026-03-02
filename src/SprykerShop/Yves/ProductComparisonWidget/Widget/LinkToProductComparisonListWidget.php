@@ -14,17 +14,11 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class LinkToProductComparisonListWidget extends AbstractWidget
 {
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'LinkToProductComparisonListWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductComparisonWidget/views/product-comparison-list-link/product-comparison-list-link.twig';
